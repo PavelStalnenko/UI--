@@ -13,13 +13,12 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .lightGray
-        let profileHeader = ProfileHeaderView()
-        
-        view.addSubview(profileHeader)
-       
-        // Do any additional setup after loading the view.
     }
-    
+    override func viewWillLayoutSubviews(){
+        let profileHeader = ProfileHeaderView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        self.view.addSubview(profileHeader)
+        profileHeader.backgroundColor = .red
+    }
 
     /*
     // MARK: - Navigation
